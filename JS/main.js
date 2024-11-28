@@ -23,6 +23,7 @@ mylinks.forEach((item, index) => {
       .forEach((link) => link.classList.remove("active"));
     link.classList.add("active");
     nav.classList.remove("active");
+    btn.classList.remove("burger");
   });
   myUnOrderList.appendChild(li);
 });
