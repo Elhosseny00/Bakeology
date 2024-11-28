@@ -48,7 +48,7 @@ a {
 }
 .container header {
   z-index: 1000;
-position: relative;
+  position: relative;
   transition: all ease;
   -webkit-transition: all ease;
   -moz-transition: all ease;
@@ -200,7 +200,7 @@ position: relative;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
-}
+  }
   .container header nav.active {
     transform: translateX(0);
     -webkit-transform: translateX(0);
@@ -307,11 +307,11 @@ position: relative;
   background-color: var(--lightBrownColor);
 }
 .container .content .social-icons {
-   justify-content: flex-end;
-  align-items: flex-end; 
-   position: absolute;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: absolute;
   bottom: 20px;
-  left: 0; 
+  left: 0;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -327,7 +327,7 @@ position: relative;
     font-size: 40px;
   }
   .container .content .text a {
-    padding: 12px 40px;
+    padding: 8px 30px;
   }
 }
 @media (max-width: 600px) {
@@ -338,7 +338,7 @@ position: relative;
     font-size: 30px;
   }
   .container .content .text a {
-    padding: 8px 25px;
+    padding: 8px 30px;
   }
 }
 .discount {
