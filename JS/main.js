@@ -40,3 +40,21 @@ document.addEventListener("click", (e) => {
     nav.classList.remove("active");
   }
 });
+
+let header = document.querySelector("header");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 10) {
+    header.style.position = "fixed"
+    header.style.top = "0"
+    header.style.left = "0"
+    header.style.backgroundColor = "#181b1e";
+    header.style.boxShadow =
+      "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px";
+  } else {
+    header.style.position = ""
+    header.style.top = ""
+    header.style.left = ""
+    header.style.backgroundColor = "";
+    header.style.boxShadow = "";
+  }
+});
