@@ -1,8 +1,8 @@
 let nav = document.querySelector("nav");
 let mylinks = [
   { linkName: "Home", to: "#home" },
-  { linkName: "About", to: "#about" },
   { linkName: "Menu", to: "#menu" },
+  { linkName: "About", to: "#about" },
   { linkName: "Services", to: "#services" },
   { linkName: "Contact", to: "#contact" },
 ];
@@ -39,5 +39,24 @@ document.addEventListener("click", (e) => {
     btn.classList.remove("burger");
     nav.classList.remove("active");
   }
+});
+let header = document.querySelector("header");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 10) {
+    header.style.backgroundColor = "#181b1e";
+    header.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
+  } else {
+    header.style.backgroundColor = "";
+    header.style.boxShadow = "";
+  }
+});
+let cartIcon = document.querySelector(".icon");
+let cart = document.querySelector(".cart");
+cartIcon.addEventListener("click", () => {
+  cart.classList.add("active");
+});
+let cartCloseBtn = document.querySelectorAll(".heade p")[1];
+cartCloseBtn.addEventListener("click", () => {
+  cart.classList.remove("active");
 });
 
