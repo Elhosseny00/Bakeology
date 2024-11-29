@@ -28,169 +28,6 @@ a {
   margin-inline: auto;
 }
 
-.cart {
-  width: 100%;
-
-  background-color: var(--whiteColor);
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1000;
-  transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-}
-.cart.active {
-  transform: translateX(0);
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-}
-
-.cart .heade {
-  width: 100%;
-  height: 60px;
-  background-color: #181b1e;
-  padding-inline: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.cart .heade p:first-child {
-  color: var(--whiteColor);
-  font-weight: bold;
-  font-size: 22px;
-}
-.cart .heade p:first-child::first-letter {
-  color: var(--lightBrownColor);
-}
-.cart .heade p:last-child {
-  color: var(--whiteColor);
-  font-weight: bold;
-  font-size: 22px;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-}
-.cart .heade p:last-child:hover {
-  color: var(--lightBrownColor);
-  scale: 1.5;
-}
-.cart  .main {
-  position: relative;
-  top: 40px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.cart .container .main .order-side {
-  flex: 1;
-  padding: 30px 20px;
-}
-.cart .container .main .order-side .cart-box {
-  overflow-y: auto; 
-  padding: 40px 0;
-  /* max-height: 600px; */
-}
-.cart .container .main .checkout {
-  width: 500px;
-  padding: 30px 20px;
-  color: #181b1e;
-}
-@media (min-width: 601px) and (max-width: 1024px) {
-
-  .cart .container .main .order-side {
-    width: 100%;
-  }
-  .cart .container .main .checkout {
-    width: 100%;
-  }
-  .cart .container .main .order-side .cart-box {
-     max-height: 400px; 
-  }
-}
-@media (max-width: 600px) {
-
-  .cart .container .main .order-side {
-    width: 100%;
-  }
-  .cart .container .main .checkout {
-    width: 100%;
-  }
-  .cart .container .main .order-side .cart-box {
-    max-height: 400px; 
- }
-}
-.cart .container .main .checkout .summary {
-  color: var(--lightBrownColor);
-  font-weight: bold;
-  font-size: 18px;
-  border-bottom: 1px solid #66666644;
-  display: inline-block;
-  width: 100%;
-  padding-bottom: 12px;
-}
-.cart .container .main .checkout .price-info .items-numbers {
-  margin: 12px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.cart .container .main .checkout .price-info .items-numbers span {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.cart .container .main .checkout .price-info ul {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.cart .container .main .checkout .price-info ul li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.cart .container .main .checkout .price-info ul li:last-child {
-  font-weight: bold;
-  border-top: 1px solid #66666644;
-  padding-top: 12px;
-}
-.cart .container .main .checkout .price-info button {
-  margin: 40px 0;
-  width: 100%;
-  height: 40px;
-  border: none;
-  background-color: #181b1e;
-  color: var(--whiteColor);
-  font-weight: bold;
-  border-radius: 1px;
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  -ms-border-radius: 1px;
-  -o-border-radius: 1px;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  cursor: pointer;
-}
-.cart .container .main .checkout .price-info button:hover {
-  background-color: var(--lightBrownColor);
-}
 .wrapper {
   width: 100%;
   height: 100vh;
@@ -259,7 +96,7 @@ a {
   position: relative;
   gap: 20px;
 }
-.container header .btns .icon i {
+.container header .btns .cart-icon i {
   color: var(--whiteColor);
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -267,7 +104,7 @@ a {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
 }
-.container header .btns .icon i:hover {
+.container header .btns .cart-icon i:hover {
   color: var(--lightBrownColor);
 }
 .container header .btns .btn {

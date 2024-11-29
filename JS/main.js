@@ -50,13 +50,5 @@ window.addEventListener("scroll", () => {
     header.style.boxShadow = "";
   }
 });
-let cartIcon = document.querySelector(".icon");
-let cart = document.querySelector(".cart");
-cartIcon.addEventListener("click", () => {
-  cart.classList.add("active");
-});
-let cartCloseBtn = document.querySelectorAll(".heade p")[1];
-cartCloseBtn.addEventListener("click", () => {
-  cart.classList.remove("active");
-});
+let cartIcon = document.querySelector(".cart-icon");
 
