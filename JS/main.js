@@ -50,68 +50,86 @@ window.addEventListener("scroll", () => {
     header.style.boxShadow = "";
   }
 });
-let cartIcon = document.querySelector(".cart-icon");
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelector(".boxes");
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-let myProducts = [
-  {
-    id: 1,
-    productName: "Toast Bread",
-    productPrice: 15,
-    productImage: "./Images/product-6.webp",
-  },
-  {
-    id: 2,
-    productName: "Oat Bread",
-    productPrice: 16,
-    productImage: "./Images/product-4.webp",
-  },
-  {
-    id: 3,
-    productName: "Wheat Bread",
-    productPrice: 10,
-    productImage: "./Images/product-3.webp",
-  },
-  {
-    id: 4,
-    productName: "Honey Cake",
-    productPrice: 25,
-    productImage: "./Images/product-2.webp",
-  },
-  {
-    id: 5,
-    productName: "Cinnamon Cake & Strawberry jam",
-    productPrice: 30,
-    productImage: "./Images/product-1.webp",
-  },
-  {
-    id: 6,
-    productName: "Cherry Cake",
-    productPrice: 24,
-    productImage: "./Images/product-5.webp",
-  },
-];
-let boxes = document.querySelector(".boxes");
-myProducts.slice(0, 6).forEach((product, index) => {
-  let myBox = document.createElement("div");
-  myBox.classList.add("box");
-  let imageCover = document.createElement("div");
-  imageCover.classList.add("image-cover");
-  let img = document.createElement("img");
-  img.setAttribute("alt", product.productName);
-  img.src = product.productImage;
-  imageCover.appendChild(img);
-  myBox.appendChild(imageCover);
-  let info = document.createElement("div");
-  info.classList.add("info");
-  let productName = document.createElement("p");
-  productName.textContent = product.productName;
-  let productPrice = document.createElement("span");
-  productPrice.textContent = `$${product.productPrice}`;
-  let addBtn = document.createElement("button");
-  addBtn.textContent = "ADD";
-  info.appendChild(productName);
-  info.appendChild(productPrice);
-  info.appendChild(addBtn);
-  myBox.appendChild(info);
-  boxes.appendChild(myBox);
+  const myProducts = [
+    {
+      id: 1,
+      productName: "Toast Bread",
+      productPrice: 15,
+      productImage: "./images/product-6.webp",
+    },
+    {
+      id: 2,
+      productName: "Oat Bread",
+      productPrice: 16,
+      productImage: "./images/product-4.webp",
+    },
+    {
+      id: 3,
+      productName: "Wheat Bread",
+      productPrice: 10,
+      productImage: "./images/product-3.webp",
+    },
+    {
+      id: 4,
+      productName: "Honey Cake",
+      productPrice: 25,
+      productImage: "./images/product-2.webp",
+    },
+    {
+      id: 5,
+      productName: "Cinnamon Cake & Strawberry jam",
+      productPrice: 30,
+      productImage: "./images/product-1.webp",
+    },
+    {
+      id: 6,
+      productName: "Cherry Cake",
+      productPrice: 24,
+      productImage: "./images/product-5.webp",
+    },
+  ];
+
+  function renderProducts() {
+    myProducts.forEach((product) => {
+      const myBox = document.createElement("div");
+      myBox.classList.add("box");
+      myBox.innerHTML = `
+        <div class="image-cover">
+          <img src="${product.productImage}" alt="${product.productName}">
+        </div>
+        <div class="info">
+          <p>${product.productName}</p>
+          <span>$${product.productPrice}</span>
+          <button class="add-to-cart" data-id="${product.id}">ADD</button>
+        </div>
+      `;
+      boxes.appendChild(myBox);
+    });
+
+    document.querySelectorAll(".add-to-cart").forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const productId = parseInt(e.target.dataset.id, 10);
+        addToCart(productId);
+      });
+    });
+  }
+
+  function addToCart(productId) {
+    const product = myProducts.find((product) => product.id === productId);
+    if (!product) return;
+    const existingProduct = cart.find((item) => item.id === productId);
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      cart.push({ ...product, quantity: 1 });
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${product.productName} added to the cart!`);
+  }
+
+  renderProducts();
 });
