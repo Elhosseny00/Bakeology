@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: 1,
       productName: "Toast Bread",
       productPrice: 15,
-      productImage: "../images/product-6.webp",
+      productImage: "./images/product-6.webp",
     },
     {
       id: 2,
@@ -128,7 +128,14 @@ document.addEventListener("DOMContentLoaded", () => {
       cart.push({ ...product, quantity: 1 });
     }
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`${product.productName} added to the cart!`);
+    let popup = document.createElement("div");
+    popup.className = "pop-up";
+    popup.innerHTML = `${product.productName} Added To Cart`;
+    body.appendChild(popup);
+    console.log(popup);
+    setTimeout(() => {
+      popup.innerHTML = "";
+    }, 3000);
   }
 
   renderProducts();
