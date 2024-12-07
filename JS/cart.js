@@ -59,7 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
           saveCart();
           renderCart();
         } else {
-          alert("Quantity cannot be less than 1.");
+          let popup = document.createElement("div");
+          popup.className = "pop-up";
+          popup.innerHTML = `${product.productName} Added To Cart`;
+          body.appendChild(popup);
+          console.log(popup);
+          setTimeout(() => {
+            popup.innerHTML = "";
+          }, 3000);
         }
       });
 
