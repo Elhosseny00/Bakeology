@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: 1,
       productName: "Toast Bread",
       productPrice: 15,
-      productImage: "./images/product-6.webp",
+      productImage: "../images/product-6.webp",
     },
     {
       id: 2,
