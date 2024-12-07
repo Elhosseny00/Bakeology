@@ -108,6 +108,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 .cart .container .main .order-side .cart-box .product-box .main-info {
   display: flex;
@@ -177,7 +178,6 @@ a {
   -ms-border-radius: 1px;
   -o-border-radius: 1px;
   cursor: pointer;
-
 }
 .cart .container .main .order-side .cart-box .product-box .btns span {
   color: var(--lightBrownColor);
@@ -189,7 +189,7 @@ a {
   font-size: 25px;
   color: var(--lightBrownColor);
 }
-.cart .container .main .order-side .cart-box .product-box .delete{
+.cart .container .main .order-side .cart-box .product-box .delete {
   width: 25px;
   height: 25px;
   border: none;
@@ -210,10 +210,24 @@ a {
   color: #181b1e;
 }
 @media (min-width: 601px) and (max-width: 1024px) {
+  .cart .container .main .order-side .cart-box .product-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cart .container .main .order-side .cart-box {
+    grid-template-columns: repeat(2 , 1fr);
+  }
+  .cart .container .main .order-side .cart-box .product-box .main-info {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .cart .container .main .order-side .cart-box .product-box .main-info .image-cover{
+    width: 100%;
+  }
 
   .cart {
     height: 100%;
-
   }
 
   .cart .container .main .order-side {
@@ -224,11 +238,20 @@ a {
   }
 }
 @media (max-width: 600px) {
-  .cart .container .main .order-side .cart-box .product-box{
+  .cart .container .main .order-side .cart-box .product-box {
     flex-direction: column;
+    align-items: flex-start;
   }
-  .cart .container .main .order-side .cart-box .product-box .main-info{
+  .cart .container .main .order-side .cart-box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cart .container .main .order-side .cart-box .product-box .main-info {
     flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .cart .container .main .order-side .cart-box .product-box .main-info .image-cover{
+    width: 100%;
   }
   .cart {
     height: 100%;
