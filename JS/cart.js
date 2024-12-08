@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartContainer = document.querySelector(".cart-box");
   const cartitle = document.querySelector(".header-text");
   const countItem = document.querySelector(".count-item");
+  const cartDiv = document.querySelector('.cart')
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   function saveCart() {
@@ -61,12 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           let popup = document.createElement("div");
           popup.className = "pop-up";
-          popup.innerHTML = `${product.productName} Added To Cart`;
-          body.appendChild(popup);
+          popup.innerHTML = "What are you doing!? the quantity can't be less than 1, you idiot &#128530;";
+          cartDiv.appendChild(popup);
           console.log(popup);
           setTimeout(() => {
             popup.innerHTML = "";
-          }, 3000);
+          }, 4000);
         }
       });
 
