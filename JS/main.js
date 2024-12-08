@@ -50,47 +50,48 @@ window.addEventListener("scroll", () => {
     header.style.boxShadow = "";
   }
 });
-const myProducts = [
-  {
-    id: 1,
-    productName: "Toast Bread",
-    productPrice: 15,
-    productImage: "./images/product-6.webp",
-  },
-  {
-    id: 2,
-    productName: "Oat Bread",
-    productPrice: 16,
-    productImage: "./images/product-4.webp",
-  },
-  {
-    id: 3,
-    productName: "Wheat Bread",
-    productPrice: 10,
-    productImage: "./images/product-3.webp",
-  },
-  {
-    id: 4,
-    productName: "Honey Cake",
-    productPrice: 25,
-    productImage: "./images/product-2.webp",
-  },
-  {
-    id: 5,
-    productName: "Cinnamon Cake & Strawberry jam",
-    productPrice: 30,
-    productImage: "./images/product-1.webp",
-  },
-  {
-    id: 6,
-    productName: "Cherry Cake",
-    productPrice: 24,
-    productImage: "./images/product-5.webp",
-  },
-];
 document.addEventListener("DOMContentLoaded", () => {
   const boxes = document.querySelector(".boxes");
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const myProducts = [
+    {
+      id: 1,
+      productName: "Toast Bread",
+      productPrice: 15,
+      productImage: "../Images/product-6.webp",
+    },
+    {
+      id: 2,
+      productName: "Oat Bread",
+      productPrice: 16,
+      productImage: "../Images/product-4.webp",
+    },
+    {
+      id: 3,
+      productName: "Wheat Bread",
+      productPrice: 10,
+      productImage: "../Images/product-3.webp",
+    },
+    {
+      id: 4,
+      productName: "Honey Cake",
+      productPrice: 25,
+      productImage: "../Images/product-2.webp",
+    },
+    {
+      id: 5,
+      productName: "Cinnamon Cake & Strawberry jam",
+      productPrice: 30,
+      productImage: "../Images/product-1.webp",
+    },
+    {
+      id: 6,
+      productName: "Cherry Cake",
+      productPrice: 24,
+      productImage: "../Images/product-5.webp",
+    },
+  ];
 
   function renderProducts() {
     myProducts.forEach((product) => {
