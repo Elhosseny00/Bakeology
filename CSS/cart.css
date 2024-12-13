@@ -102,7 +102,7 @@ a {
 .cart .container .main .order-side .cart-box {
   overflow-y: auto;
   padding: 40px 0;
-  height: 500px;
+  /* height: 500px; */
   padding: 12px 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: grid;
@@ -226,6 +226,7 @@ a {
   .cart .container .main .order-side .cart-box .product-box {
     flex-direction: column;
     align-items: flex-start;
+    gap: 30px;
   }
   .cart .container .main .order-side .cart-box {
     grid-template-columns: repeat(2 , 1fr);
@@ -254,6 +255,7 @@ a {
   .cart .container .main .order-side .cart-box .product-box {
     flex-direction: column;
     align-items: flex-start;
+    gap: 30px;
   }
   .cart .container .main .order-side .cart-box {
     grid-template-columns: repeat(1, 1fr);
